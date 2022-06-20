@@ -6,16 +6,18 @@
 
 body{
     display: grid;
+    min-height: 100vh;
     grid-template-columns: 1fr 4fr;
+    grid-template-rows: auto 4fr;
 }
 
+
 .sidebar{
-    grid-row: 1/3;
-    background-color: #ff6b6b ;
+    grid-area: 1/1/-1/2;
+    background-color: #ff6b6b;
     display: grid;
+    grid-template-rows: auto auto 1fr;
     gap: 50px;
-    height: 100vh;
-    align-content: start;
     padding: 15px;
     font-weight: 550;
 }
@@ -58,12 +60,8 @@ body{
     color: white;
 }
 
-.main{
-    display: grid;
-    grid-template-rows: 1fr 6fr;
-}
-
 header {
+    grid-area: 1/2/2/-1;
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: auto 1fr;
@@ -257,4 +255,16 @@ main .sideContent .announcements .announcementContainer .announcementBorder, mai
     width: 100%;
     height: 1px;
     background-color: lightgray;
+}
+
+main .sideContent .trending .trendingContainer .trend{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+main .sideContent .trending .trendingContainer .trendProfilePicture {
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;
 }
